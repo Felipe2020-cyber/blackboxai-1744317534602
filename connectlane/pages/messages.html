@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens | ConnectLANE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .conversation-active {
+            background-color: #EFF6FF;
+            border-left: 4px solid #3B82F6;
+        }
+        .message-sent {
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 1rem 1rem 0 1rem;
+        }
+        .message-received {
+            background-color: #E5E7EB;
+            color: #111827;
+            border-radius: 1rem 1rem 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-green-600 flex items-center">
+                <i class="fas fa-hands-helping mr-2"></i>ConnectLANE
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="relative">
+                    <i class="fas fa-arrow-left text-gray-600 text-xl"></i>
+                </a>
+                <a href="#" class="relative">
+                    <i class="fas fa-bell text-gray-600 text-xl"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                </a>
+                <a href="/pages/profile.html" class="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Profile" class="w-full h-full object-cover">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Conversations List -->
+            <div class="w-full md:w-80 flex-shrink-0 bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 border-b">
+                    <h2 class="text-xl font-bold">Conversas</h2>
+                </div>
+                <div class="divide-y">
+                    <!-- Conversation 1 -->
+                    <div class="conversation-active p-4 flex items-center cursor-pointer">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Ana P." class="w-12 h-12 rounded-full mr-3">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between">
+                                <h3 class="font-medium truncate">Ana P.</h3>
+                                <span class="text-xs text-gray-500">10:30</span>
+                            </div>
+                            <p class="text-sm text-gray-500 truncate">Obrigada pelo sofá! Combinamos para sábado?</p>
+                        </div>
+                    </div>
+
+                    <!-- Conversation 2 -->
+                    <div class="p-4 flex items-center hover:bg-gray-50 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Marcos A." class="w-12 h-12 rounded-full mr-3">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between">
+                                <h3 class="font-medium truncate">Marcos A.</h3>
+                                <span class="text-xs text-gray-500">Ontem</span>
+                            </div>
+                            <p class="text-sm text-gray-500 truncate">Posso retirar os livros amanhã à tarde</p>
+                        </div>
+                    </div>
+
+                    <!-- Conversation 3 -->
+                    <div class="p-4 flex items-center hover:bg-gray-50 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg" alt="Roberto F." class="w-12 h-12 rounded-full mr-3">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between">
+                                <h3 class="font-medium truncate">Roberto F.</h3>
+                                <span class="text-xs text-gray-500">Seg</span>
+                            </div>
+                            <p class="text-sm text-gray-500 truncate">O videogame ainda está disponível?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="flex-1 flex flex-col bg-white rounded-lg shadow-sm overflow-hidden">
+                <!-- Chat Header -->
+                <div class="p-4 border-b flex items-center">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Ana P." class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h3 class="font-medium">Ana P.</h3>
+                        <p class="text-xs text-gray-500">Online agora</p>
+                    </div>
+                    <div class="ml-auto flex space-x-2">
+                        <button class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                            <i class="fas fa-phone text-gray-600"></i>
+                        </button>
+                        <button class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                            <i class="fas fa-ellipsis-v text-gray-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                <div class="flex-1 p-4 overflow-y-auto" style="max-height: 60vh;">
+                    <div class="space-y-4">
+                        <!-- Date Divider -->
+                        <div class="text-center text-xs text-gray-500 my-4">Hoje</div>
+
+                        <!-- Received Message -->
+                        <div class="flex">
+                            <div class="message-received px-4 py-2 max-w-xs md:max-w-md">
+                                <p>Olá Carlos! O sofá ainda está disponível?</p>
+                                <p class="text-xs text-gray-500 mt-1">10:15</p>
+                            </div>
+                        </div>
+
+                        <!-- Sent Message -->
+                        <div class="flex justify-end">
+                            <div class="message-sent px-4 py-2 max-w-xs md:max-w-md">
+                                <p>Sim, está disponível! Você pode vir buscar quando quiser.</p>
+                                <p class="text-xs text-gray-200 mt-1">10:18</p>
+                            </div>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="flex">
+                            <div class="message-received px-4 py-2 max-w-xs md:max-w-md">
+                                <p>Que ótimo! Posso ir no sábado pela manhã?</p>
+                                <p class="text-xs text-gray-500 mt-1">10:20</p>
+                            </div>
+                        </div>
+
+                        <!-- Sent Message -->
+                        <div class="flex justify-end">
+                            <div class="message-sent px-4 py-2 max-w-xs md:max-w-md">
+                                <p>Claro! Vou te enviar o endereço pelo chat.</p>
+                                <p class="text-xs text-gray-200 mt-1">10:22</p>
+                            </div>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="flex">
+                            <div class="message-received px-4 py-2 max-w-xs md:max-w-md">
+                                <p>Obrigada! Combinamos para sábado então.</p>
+                                <p class="text-xs text-gray-500 mt-1">10:30</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="p-4 border-t">
+                    <form class="flex items-center">
+                        <button type="button" class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center mr-2">
+                            <i class="fas fa-paperclip text-gray-600"></i>
+                        </button>
+                        <input type="text" placeholder="Digite sua mensagem..." class="flex-1 border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button type="submit" class="w-10 h-10 rounded-full bg-green-500 text-white hover:bg-green-600 flex items-center justify-center ml-2">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p>© 2023 ConnectLANE. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Conversation selection functionality
+        const conversations = document.querySelectorAll('.divide-y > div');
+        conversations.forEach(conversation => {
+            conversation.addEventListener('click', () => {
+                conversations.forEach(c => c.classList.remove('conversation-active'));
+                conversation.classList.add('conversation-active');
+            });
+        });
+    </script>
+</body>
+</html>
